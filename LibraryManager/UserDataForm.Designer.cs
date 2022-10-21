@@ -1,6 +1,6 @@
 ﻿namespace LibraryManager
 {
-    partial class LibraryForm
+    partial class UserDataForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.InputField = new System.Windows.Forms.TextBox();
-            this.EnterButton = new System.Windows.Forms.Button();
+            this.UserNameLabel = new System.Windows.Forms.Label();
+            this.BooksDataLayout = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // InputField
+            // UserNameLabel
             // 
-            this.InputField.Location = new System.Drawing.Point(291, 168);
-            this.InputField.Name = "InputField";
-            this.InputField.Size = new System.Drawing.Size(243, 20);
-            this.InputField.TabIndex = 1;
+            this.UserNameLabel.AutoSize = true;
+            this.UserNameLabel.Location = new System.Drawing.Point(195, 168);
+            this.UserNameLabel.Name = "UserNameLabel";
+            this.UserNameLabel.Size = new System.Drawing.Size(35, 13);
+            this.UserNameLabel.TabIndex = 5;
+            this.UserNameLabel.Text = "label1";
             // 
-            // EnterButton
+            // BooksDataLayout
             // 
-            this.EnterButton.Location = new System.Drawing.Point(351, 211);
-            this.EnterButton.Name = "EnterButton";
-            this.EnterButton.Size = new System.Drawing.Size(111, 23);
-            this.EnterButton.TabIndex = 2;
-            this.EnterButton.Text = "button1";
-            this.EnterButton.UseVisualStyleBackColor = true;
-            this.EnterButton.Click += new System.EventHandler(this.EnterButton_Click);
+            this.BooksDataLayout.FormattingEnabled = true;
+            this.BooksDataLayout.Location = new System.Drawing.Point(360, 101);
+            this.BooksDataLayout.Name = "BooksDataLayout";
+            this.BooksDataLayout.Size = new System.Drawing.Size(222, 199);
+            this.BooksDataLayout.TabIndex = 4;
             // 
-            // LibraryForm
+            // UserData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.EnterButton);
-            this.Controls.Add(this.InputField);
-            this.Name = "LibraryForm";
-            this.Text = "LibraryForm";
-            this.Load += new System.EventHandler(this.LibraryForm_Load);
+            this.Controls.Add(this.UserNameLabel);
+            this.Controls.Add(this.BooksDataLayout);
+            this.Name = "UserData";
+            this.Text = "UserData";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox InputField;
-        private System.Windows.Forms.Button EnterButton;
+
+        private System.Windows.Forms.Label UserNameLabel;
+        private System.Windows.Forms.ListBox BooksDataLayout;
     }
 }

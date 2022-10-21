@@ -11,16 +11,30 @@ using System.Windows.Forms;
 
 namespace LibraryManager
 {
+    // Класс в котором хранится информация о пользователе
+    public class UserData
+    {
+        public string NumberOfTicket;
+        public string UserName;
+        public string Books;
+    }
     public static class Common
     {
-        public static string DataPath => Application.UserAppDataPath + "/user_";
+        // Свойство на путь файла любого пользователя
+        public static string UserDataPath => Application.UserAppDataPath + "/User";
 
+        public static string NumberOfTicketFile => "NumberOfTicket.txt";
+        public static string UserFullNameFile => "UserFullName.txt";
+        public static string BooksFile => "Books.txt";
+
+        // Свойство на получения количества пользователей
         public static int UsersCount
         {
             get
             {
+                // подсчет пользователей путем прохода по папкам
                 int result = 0;
-                while (File.Exists(DataPath + (result + 1)))
+                while (File.Exists(UserDataPath + (result + 1) + "/" + NumberOfTicketFile))
                 {
                     result++;
                 }
@@ -29,34 +43,37 @@ namespace LibraryManager
             }
         }
 
-        public static bool HasNubers(string value)
-        {
-            foreach (char s in value)
-            {
-                if (char.IsDigit(s)) return true;
-            }
-
-            return false;
-        }
-
-        public static bool IsOnlyDigits(string value)
-        {
-            foreach (char s in value)
-            {
-                if (!char.IsDigit(s)) return false;
-            }
-
-            return true;
-        }
-
-        public static bool HasUser(string userData)
+        // Проверка на то, есть ли пользователь
+        public static bool HasUser(string ticketNumber)
         {
             for (int i = 1; i <= UsersCount; i++)
             {
-                if (File.ReadAllText(DataPath + i) == userData) return true;
+                if (File.ReadAllText(UserDataPath + i + "/" + NumberOfTicketFile) == ticketNumber) return true;
             }
 
             return false;
         }
+
+        // Получение информации конкретного пользователя
+        public static UserData GetUser(string ticketNumber)
+        {
+            for (int i = 1; i <= UsersCount; i++)
+            {
+                if (File.ReadAllText(UserDataPath + i + "/" + NumberOfTicketFile) == ticketNumber)
+                {
+                    UserData userData = new UserData
+                    {
+                        NumberOfTicket = File.ReadAllText(UserDataPath + i + "/" + NumberOfTicketFile),
+                        UserName = File.ReadAllText(UserDataPath + i + "/" + UserFullNameFile),
+                        Books = File.ReadAllText(UserDataPath + i + "/" + BooksFile)
+                    };
+
+                    return userData;
+                }
+            }
+
+            throw new Exception("User did not find!");
+        }
+
     }
 }

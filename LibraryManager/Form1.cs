@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,33 +13,27 @@ namespace LibraryManager
 {
     public partial class Form1 : Form
     {
-        public static Form1 instance;
 
         public Form1()
         {
             InitializeComponent();
-
-            instance = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
         }
 
-        private void SignInButton_Click(object sender, EventArgs e)
+        // Обработка кнопки ввода на перовом экарне
+        private void EnterButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
+            if (!Common.HasUser(InputField.Text)) return; // Проверка на то, есть ли пользователь
 
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-        }
+            // Создание формы пользователя
+            UserDataForm userDataForm = new UserDataForm(Common.GetUser(InputField.Text));
 
-        private void SignUp_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            SignUpForm signUpForm = new SignUpForm();
-            signUpForm.ShowDialog();
+            // Открытие формы пользователя
+            userDataForm.Show();
         }
     }
 }

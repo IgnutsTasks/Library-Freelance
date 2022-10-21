@@ -16,5 +16,14 @@ namespace LibraryManager
         {
             InitializeComponent();
         }
+
+        private void LibraryForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void EnterButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
