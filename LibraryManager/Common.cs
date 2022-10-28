@@ -17,6 +17,8 @@ namespace LibraryManager
         public string NumberOfTicket;
         public string UserName;
         public string Books;
+
+        public string BornData;
     }
     public static class Common
     {
@@ -26,6 +28,7 @@ namespace LibraryManager
         public static string NumberOfTicketFile => "NumberOfTicket.txt";
         public static string UserFullNameFile => "UserFullName.txt";
         public static string BooksFile => "Books.txt";
+        public static string BornDataFile => "BornData.txt";
 
         // Свойство на получения количества пользователей
         public static int UsersCount
@@ -44,6 +47,7 @@ namespace LibraryManager
         }
 
         // Проверка на то, есть ли пользователь
+        // Функция (он же метод)
         public static bool HasUser(string ticketNumber)
         {
             for (int i = 1; i <= UsersCount; i++)
@@ -65,7 +69,8 @@ namespace LibraryManager
                     {
                         NumberOfTicket = File.ReadAllText(UserDataPath + i + "/" + NumberOfTicketFile),
                         UserName = File.ReadAllText(UserDataPath + i + "/" + UserFullNameFile),
-                        Books = File.ReadAllText(UserDataPath + i + "/" + BooksFile)
+                        Books = File.ReadAllText(UserDataPath + i + "/" + BooksFile),
+                        BornData = File.ReadAllText(UserDataPath + i + "/" + BornDataFile)
                     };
 
                     return userData;
