@@ -1,0 +1,13 @@
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\bin\Debug\LibraryManager.exe.config
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\bin\Debug\LibraryManager.exe
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\bin\Debug\LibraryManager.pdb
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.csproj.AssemblyReference.cache
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.csproj.SuggestedBindingRedirects.cache
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.Properties.Resources.resources
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.csproj.GenerateResource.cache
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.csproj.CoreCompileInputs.cache
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.exe
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.pdb
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.Form1.resources
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.LibraryForm.resources
+D:\spacework\freelance\csharp\LibraryManager\LibraryManager\obj\Debug\LibraryManager.UserDataForm.resources
